@@ -1,0 +1,47 @@
+# Dependency directories
+node_modules/
+lib/
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Editor files
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# IDE files
+.idea/
+
+# Compiled files
+dist/
+build/
+
+# Package files
+*.zip
+*.tar.gz
+*.tar
+*.gz
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
