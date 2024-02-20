@@ -2,7 +2,7 @@ function header(param) {
   console.log('header.onload!!!!!')
   var data = {
     port: 123,
-    userID: "astraltear"
+    userID: "omega3"
   };
   
   data.version="10.1.1.";
