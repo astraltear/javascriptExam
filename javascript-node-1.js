@@ -2,11 +2,11 @@ function header(param) {
   console.log('header.onload!!!!!')
   var data = {
     port: 123,
-    userID: "wifiKey"
+    userID: "astraltear"
   };
   
   data.version="10.1.1.";
-  window[param](data);
+  window[param](data); // 객체에 동적으로 적용하는 방법 
 }
 
 function func1(param) {
