@@ -131,7 +131,7 @@ function kin4(str, max){
 			x = src.substr(j, 1);
 			y = src2.substr(j, max);
 			ptn += "["+x+"]{"+max+",}|";
-			ptn += y+"|";
+			ptn += y+"|";  // [0]{4,}|0123|[1]{4,}|1234|[2]{4,}|2345|[3]{4,}|3456|[4]{4,}|4567|  이렇게 생성된다 
 		}
 	}
 	ptn = new RegExp(ptn.replace(/.$/, "")); // 맨마지막의 글자를 하나 없애고 정규식으로 만든다.
@@ -150,17 +150,15 @@ function kin4(str, max){
 // getRandomTwoValue();    
 //collectionTest();
 
-
-
-
-let pw1='!Skt109428*';
-let pw2='!Wjdalsdn109428';
-let pw3='!Q2w3e4r5t';
+let pw1='Zx3c4v5b!-5678';  // 소문자+대문자+특수문자+숫자 
 
 // console.log( "pwdCheck pw1:",pwdCheck(pw1) )  // true
 // console.log( "pwdCheck pw2:",pwdCheck(pw2) )  // true
 // console.log( "pwdCheck pw3:",pwdCheck(pw3) )  // true
 
+console.log(kin4(pw1));
 
-console.log(kin4(pw3));
-
+const arg1 = {key1:"value1", key2:"value2"  };
+const result = {...(arg1), key3:"value3" };  //  spread  연산자 
+const result1 = {key4:"value4", ...(result), key5:"value5", ...(arg1)}; // 중복값 발생시 최종 값이 이전 값을 덮어쓴다. 
+console.log(result1);
