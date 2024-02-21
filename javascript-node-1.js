@@ -94,16 +94,73 @@ function getRandomTwoValue(){
      
      console.log("firstNum:"+firstNum+" secondNum:"+ secondNum )
 }
+
+function collectionTest(){
+  console.log(  [1,2,3,4].map( (v)=>{ return v*5}  ) )
+}
   
-  
+
+function pwdCheck(val){
+	var check = true;
+	var alpha_pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{8,20}$/;
+  /*
+    (?=.*[a-z]): 소문자 알파벳이 최소한 1개 포함되어야 합니다.
+    (?=.*[A-Z]): 대문자 알파벳이 최소한 1개 포함되어야 합니다.
+    (?=.*\d): 숫자가 최소한 1개 포함되어야 합니다.
+    (?=.*\W): 특수문자가 최소한 1개 포함되어야 합니다.
+    .{8,20}: 총 길이가 8에서 20 사이여야 합니다.
+  */
+	if(!alpha_pattern.test(val) || kin4(val)){
+		check = false;
+	}else{
+		check = true;
+	}
+	return check;
+}
+
+function kin4(str, max){
+	if(!max) max = 4; // 글자수를 지정하지 않으면 4로 지정
+	var i, j, k, x, y;
+	var buff = ["0123456789", "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+	var src, src2, ptn="";
+	
+	for(i=0; i<buff.length; i++){
+		src = buff[i];
+		src2 = buff[i] + buff[i];
+		for(j=0; j<src.length; j++){
+			x = src.substr(j, 1);
+			y = src2.substr(j, max);
+			ptn += "["+x+"]{"+max+",}|";
+			ptn += y+"|";
+		}
+	}
+	ptn = new RegExp(ptn.replace(/.$/, "")); // 맨마지막의 글자를 하나 없애고 정규식으로 만든다.
+	
+	if(ptn.test(str.toUpperCase())) return true;
+	return false;
+}
+
     
 // header('func1');  // window 객체 때문에 node에서 실행하면 오류남 
-//arrayTest();
-objectHandle();
+// arrayTest();
+// objectHandle();
 // arrayTest2();
 // mathTest();
-//trycatchTest();
-//getRandomTwoValue();    
+// trycatchTest();
+// getRandomTwoValue();    
+//collectionTest();
 
-  
-  
+
+
+
+let pw1='!Skt109428*';
+let pw2='!Wjdalsdn109428';
+let pw3='!Q2w3e4r5t';
+
+// console.log( "pwdCheck pw1:",pwdCheck(pw1) )  // true
+// console.log( "pwdCheck pw2:",pwdCheck(pw2) )  // true
+// console.log( "pwdCheck pw3:",pwdCheck(pw3) )  // true
+
+
+console.log(kin4(pw3));
+
