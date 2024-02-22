@@ -173,7 +173,9 @@ function forEachTest(){
   } );
 
   console.log(resultObj);
-
+  
+  var [one,two,three] = "abc:ABC:123".split(":");
+  console.log( one,two,three );
   
 }
 
