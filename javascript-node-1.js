@@ -140,7 +140,43 @@ function kin4(str, max){
 	return false;
 }
 
+function pwTest(){
+  let pw1='Zx3c4v5b!-5678';  // 소문자+대문자+특수문자+숫자 
+
+  // console.log( "pwdCheck pw1:",pwdCheck(pw1) )  // true
+  // console.log( "pwdCheck pw2:",pwdCheck(pw2) )  // true
+  // console.log( "pwdCheck pw3:",pwdCheck(pw3) )  // true
+  
+  console.log(kin4(pw1));
+  
+  
+}
+
+function spreadTest(){
+  const arg1 = {key1:"value1", key2:"value2"  };
+  const result = {...(arg1), key3:"value3" };  //  spread  연산자 
+  const result1 = {key4:"value4", ...(result), key5:"value5", ...(arg1)}; // 중복값 발생시 최종 값이 이전 값을 덮어쓴다. 
+  console.log(result1);
+}
+
+function forEachTest(){
+  const resultObj ={};
+  let str="x:111,y:222";
+
+  str.split(",").forEach( v =>{
     
+    // v를 분할하여 배열을 생성 
+    // 그리고 [key, value]를 사용하여 배열의 각 요소를 key와 value 변수에 할당
+    // 비구조화 할당(destructuring assignment) ES6부터 도입된 문법
+     const [key,value] = v.split(":");  
+     resultObj[key] = value;
+  } );
+
+  console.log(resultObj);
+
+  
+}
+
 // header('func1');  // window 객체 때문에 node에서 실행하면 오류남 
 // arrayTest();
 // objectHandle();
@@ -149,16 +185,6 @@ function kin4(str, max){
 // trycatchTest();
 // getRandomTwoValue();    
 //collectionTest();
-
-let pw1='Zx3c4v5b!-5678';  // 소문자+대문자+특수문자+숫자 
-
-// console.log( "pwdCheck pw1:",pwdCheck(pw1) )  // true
-// console.log( "pwdCheck pw2:",pwdCheck(pw2) )  // true
-// console.log( "pwdCheck pw3:",pwdCheck(pw3) )  // true
-
-console.log(kin4(pw1));
-
-const arg1 = {key1:"value1", key2:"value2"  };
-const result = {...(arg1), key3:"value3" };  //  spread  연산자 
-const result1 = {key4:"value4", ...(result), key5:"value5", ...(arg1)}; // 중복값 발생시 최종 값이 이전 값을 덮어쓴다. 
-console.log(result1);
+// pwTest();
+// spreadTest();
+forEachTest();
