@@ -179,6 +179,41 @@ function forEachTest(){
   
 }
 
+function arrayReduce(){
+  let arr2 = [  { id: "foo", name: "Mr, Foo" },  { id: "baz", name: "Mr. Baz" }];
+  /*
+  array.reduce(callback(accumulator, currentValue, currentIndex, array), initialValue)
+  callback: 각 요소에 대해 실행할 함수로, 다음 네 가지 매개변수를 받습니다.
+    accumulator: 누적된 결과값.
+    currentValue: 현재 순회 중인 배열의 요소.
+    currentIndex: 현재 순회 중인 배열의 인덱스.
+    array: reduce()를 호출한 배열 자체.
+    initialValue (optional): 초기값으로, 첫 번째 콜백 호출에서 accumulator의 초기 값으로 사용됩니다. 생략하면 배열의 첫 번째 요소가 초기값으로 사용됩니다.
+  */
+  arr2.reduce(  
+    (a,v)=>{
+      console.log(a, v);
+      
+    },"default value"
+  );
+
+  const number = [1,2,3,4,5,6,7,8,9,10];
+  const sum = number.reduce( (accumulator,currentValue, index )=>{
+      console.log("index===>",index);
+      return accumulator + currentValue;
+  }, 0  );
+  console.log("sum",sum);
+
+}
+
+function functGrammer(){
+  const func2 = function(name){
+    return "FUNC2 ".concat(name);
+  }
+
+  console.log(func2('series'));
+}
+
 // header('func1');  // window 객체 때문에 node에서 실행하면 오류남 
 // arrayTest();
 // objectHandle();
@@ -189,4 +224,6 @@ function forEachTest(){
 //collectionTest();
 // pwTest();
 // spreadTest();
-forEachTest();
+// forEachTest();
+// arrayReduce();
+functGrammer();
