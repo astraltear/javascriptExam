@@ -214,6 +214,15 @@ function functGrammer(){
   console.log(func2('series'));
 }
 
+function immutabilityTest(){
+  const plainVar = "abc";
+  // plainVar="erererer"; Assignment to constant variable.
+  console.log(plainVar);
+
+  
+
+}
+
 // header('func1');  // window 객체 때문에 node에서 실행하면 오류남 
 // arrayTest();
 // objectHandle();
@@ -226,4 +235,5 @@ function functGrammer(){
 // spreadTest();
 // forEachTest();
 // arrayReduce();
-functGrammer();
+// functGrammer();
+immutabilityTest();
