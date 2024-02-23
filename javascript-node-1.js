@@ -218,9 +218,6 @@ function immutabilityTest(){
   const plainVar = "abc";
   // plainVar="erererer"; Assignment to constant variable.
   console.log(plainVar);
-
-  
-
 }
 
 // header('func1');  // window 객체 때문에 node에서 실행하면 오류남 
