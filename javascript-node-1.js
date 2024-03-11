@@ -77,7 +77,21 @@ function trycatchTest(){
 }
   
 function mathTest(){
-  console.log(  Math.floor(Math.random() * 3)  );
+  let avdUrl=[];
+  // let avdUrl=[[1,"www.kounts.info","[www.kounts.info]&02-578-3694",999]];
+  // let avdUrl=[[1,"www.kounts.info","[www.kounts.info]&02-578-3694",999],[1,"www.kounts.info","[www.kounts.info]&02-578-3694",999]];
+  
+  var avdUrlLength = avdUrl.length;
+  
+  var firstNum = Math.floor(Math.random() * avdUrlLength);
+  var secondNum =0;
+  
+  if(firstNum ==(avdUrlLength-1) || avdUrlLength == 0  ){
+      secondNum = 0;
+  } else {
+      secondNum = firstNum+1;
+  }
+  console.log("firstNum["+firstNum+"]secondNum["+secondNum+"]");
 }
   
 function getRandomTwoValue(){
@@ -224,7 +238,7 @@ function immutabilityTest(){
 // arrayTest();
 // objectHandle();
 // arrayTest2();
-// mathTest();
+mathTest();
 // trycatchTest();
 // getRandomTwoValue();    
 //collectionTest();
@@ -233,4 +247,5 @@ function immutabilityTest(){
 // forEachTest();
 // arrayReduce();
 // functGrammer();
-immutabilityTest();
+// immutabilityTest();
+
