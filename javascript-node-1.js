@@ -234,18 +234,38 @@ function immutabilityTest(){
   console.log(plainVar);
 }
 
-// header('func1');  // window 객체 때문에 node에서 실행하면 오류남 
-// arrayTest();
-// objectHandle();
-// arrayTest2();
-mathTest();
-// trycatchTest();
-// getRandomTwoValue();    
-//collectionTest();
-// pwTest();
-// spreadTest();
-// forEachTest();
-// arrayReduce();
-// functGrammer();
-// immutabilityTest();
+function filterTest(){
+  const sets = [
+    [1, 2, 3, 4, 5],
+    [6, 7, 8, 9, 10]
+  ];
 
+
+  for (let i  in sets) {
+    console.log("in : "+i);
+  }
+  for (let i  of sets) {
+    console.log("of : "+i);
+  }
+
+  sets.forEach( v=>{ 
+    //console.log(v);
+      v.filter( k =>{  if(k%2===0){console.log(k)}  } )
+   });
+}
+
+filterTest();
+// immutabilityTest();
+// functGrammer();
+// arrayReduce();
+// forEachTest();
+// spreadTest();
+// pwTest();
+//collectionTest();
+// getRandomTwoValue();    
+// trycatchTest();
+// mathTest();
+// arrayTest2();
+// objectHandle();
+// arrayTest();
+// header('func1');  // window 객체 때문에 node에서 실행하면 오류남 
