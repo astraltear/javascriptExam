@@ -254,7 +254,16 @@ function filterTest(){
    });
 }
 
-filterTest();
+function variablesTest(){
+  var var1="a";
+  console.log(var1)
+  var var1="b";
+  console.log(var1)
+};
+
+
+variablesTest();
+// filterTest();
 // immutabilityTest();
 // functGrammer();
 // arrayReduce();
