@@ -259,10 +259,38 @@ function variablesTest(){
   console.log(var1)
   var var1="b";
   console.log(var1)
+
+  let letvar=0;
+  letvar++;
+
+  const convar=0;
+  convar++;
 };
 
+function arrowFunc(){
+  let upcount=0;
+/* 
+  
+  () 함수의 매개변수 부분
+  () => { ... }: 매개변수 없는 함수
+  (x) => { ... }: 하나의 매개변수를 받는 함수
+  (x, y) => { ... }: 두 개의 매개변수를 받는 함수
 
-variablesTest();
+*/
+  const upvote=(x)=>{    
+    console.log((x+upcount) )
+  }
+
+  const upvote2=function(y){
+    console.log((y+upcount) )
+  }
+
+  upvote(4);
+  upvote2(7);
+}
+
+arrowFunc();
+// variablesTest();
 // filterTest();
 // immutabilityTest();
 // functGrammer();
