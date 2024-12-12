@@ -327,6 +327,9 @@ function objLiteral(){
 
   let result= {searchResults : []}
   console.log(result)
+
+  let counter={count:0};
+  
 }
 
 let fetch1 = ()=>{
