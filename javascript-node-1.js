@@ -329,9 +329,36 @@ function objLiteral(){
   console.log(result)
 }
 
+let fetch1 = ()=>{
+  return fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then( res => res.json() )
+  .then( json => {  console.log(json); return json; } )
+  .catch(error => { console.log(error); return {}; });
+}
 
-function fetchSample(){
-  
+let fetch2= async ()=>{
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+    if(!response.ok){
+      throw new Error('Network response was not ok');
+    }
+    
+    const res = await response.json();
+    return res;
+
+  } catch (error) {
+    console.error('error:',error);
+    throw error;
+  }
+}
+
+async function fetchSample(){
+
+  let result1 = await  fetch1();
+  console.log("result1:::",result1);
+
+  let result2 = await  fetch2();
+  console.log("result2:::",result2);
 }
 
 fetchSample();
