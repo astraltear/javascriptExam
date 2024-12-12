@@ -289,7 +289,54 @@ function arrowFunc(){
   upvote2(7);
 }
 
-arrowFunc();
+function objLiteral(){
+  let obj1 = {one:"first"}
+  console.log( obj1.one  )
+  
+  let obj2 = {"two":"second"}
+  console.log( obj2.two  )
+  console.log( obj2["two"]  )
+
+  let obj3 = {"special key!": "value"};
+  console.log(obj3["special key!"]); // "value"
+  // console.log(obj3.special key!); // 이건 오류 발생
+
+  let obj4={
+      fruits : [1,2,3,4,5],
+      price : 100,
+      message : 'vue is the app best package!',
+      inversetxt :'',
+      reversetxt : '',
+      kmethos: function (){  console.log("kkkk methods"); },
+      inter : {sayhello : [7,8,{third:"deep3"}]}
+  }
+
+  console.log(obj4.fruits[4]," ", obj4.message, " ", obj4.inter.sayhello[2].third )
+  obj4.kmethos();
+
+  let obj5={
+      elects : [
+          {name:"black", count : 0},
+          {name:"pink", count :0},
+          {name:"white", count :0},
+          {name:"brown", count :0} 
+      ]        
+  }
+
+  console.log( obj5.elects[1].name )
+
+  let result= {searchResults : []}
+  console.log(result)
+}
+
+
+function fetchSample(){
+  
+}
+
+fetchSample();
+// objLiteral();
+// arrowFunc();
 // variablesTest();
 // filterTest();
 // immutabilityTest();
