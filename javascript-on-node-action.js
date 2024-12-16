@@ -370,10 +370,10 @@ function filterTest(){
 
   // JavaScript에서 { } 블록은 값을 반환하지 않으므로, 필터링 콜백 함수가 항상 false로 평가됩니다.
   // 따라서 filter() 메서드는 모든 요소를 제거하고 빈 배열 []을 반환합니다.
-  const result0 = todos.filter( (e)=> {  e !== element}  ) // []
+  const result0 = todos.filter( (e)=> { e !== element }  ) // []
   console.log(result0);
 
-  const result1 = todos.filter( (e)=> { return e !== element}  ) // [ 1, 3, 4, 5 ]
+  const result1 = todos.filter( (e)=> { return e !== element }  ) // [ 1, 3, 4, 5 ]
   console.log(result1);
 
   const result2 = todos.filter( (e)=> e !== element  ) // [ 1, 3, 4, 5 ]
