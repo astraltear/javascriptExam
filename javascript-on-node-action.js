@@ -382,7 +382,29 @@ function filterTest(){
 
 };
 
-filterTest();
+async function async1() {
+  return "Hello, Async!";
+}
+
+function  asyncAwaitTest() {
+
+/*
+  비동기 함수 (async)
+    async 키워드는 함수를 비동기로 선언합니다.
+    비동기 함수는 항상 Promise 객체를 반환합니다.
+    함수 내부에서 return 값을 사용하면, 이는 암묵적으로 Promise.resolve()로 감싸집니다.
+
+  await 키워드
+    await는 Promise가 처리될 때까지 함수의 실행을 멈추고 결과 값을 반환받습니다.
+    await는 async 함수 내에서만 사용 가능합니다.
+    await 뒤에는 반드시 Promise를 반환하는 표현식이어야 합니다.
+*/
+  console.log(  async1() )
+  async1().then( (res) => { console.log(res) }   )
+}
+
+asyncAwaitTest();
+// filterTest();
 // fetchSample();
 // objLiteral();
 // arrowFunc();
