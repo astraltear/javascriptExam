@@ -386,6 +386,16 @@ async function async1() {
   return "Hello, Async!";
 }
 
+// 병렬 처리
+async function fetchAll() {
+  const [data1, data2] = await Promise.all([
+    fetch('https://jsonplaceholder.typicode.com/todos/2').then( (res)=> res.json()  ),
+    fetch('https://jsonplaceholder.typicode.com/todos/10').then( (res)=> res.json()  )
+  ]);
+
+  console.log(data1,data2)
+}
+
 function  asyncAwaitTest() {
 
 /*
@@ -398,9 +408,30 @@ function  asyncAwaitTest() {
     await는 Promise가 처리될 때까지 함수의 실행을 멈추고 결과 값을 반환받습니다.
     await는 async 함수 내에서만 사용 가능합니다.
     await 뒤에는 반드시 Promise를 반환하는 표현식이어야 합니다.
+
+  then기반 코드
+      fetch("https://api.example.com/data")
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.error("Error:", error));
+  
+  async/await 기반 코드
+      async function fetchData() {
+      try {
+        const response = await fetch("https://api.example.com/data");
+        const data = await response.json();
+        console.log(data);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    }
+
+    fetchData(); 
 */
   console.log(  async1() )
   async1().then( (res) => { console.log(res) }   )
+
+  fetchAll();
 }
 
 asyncAwaitTest();
